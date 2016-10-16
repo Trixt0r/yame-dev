@@ -9,8 +9,7 @@
   "author": "Trixt0r",
   "license": "ISC",
   "dependencies": {
-    "chokidar": "^1.6.1",
-    "less": "^2.7.1"
+    "chokidar": "^1.6.1"
   },
   "install": "npm install typescript -g && tsc"
 }
