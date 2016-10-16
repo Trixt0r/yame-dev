@@ -1,0 +1,16 @@
+{
+  "name": "yame-dev",
+  "version": "0.0.1",
+  "description": "Development module for yame.",
+  "main": "app/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Trixt0r",
+  "license": "ISC",
+  "dependencies": {
+    "chokidar": "^1.6.1",
+    "less": "^2.7.1"
+  },
+  "install": "npm install typescript -g && tsc"
+}
