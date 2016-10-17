@@ -6,7 +6,9 @@
   "author": "Trixt0r",
   "license": "ISC",
   "dependencies": {
-    "chokidar": "^1.6.1",
+    "chokidar": "^1.6.1"
+  },
+  "devDependencies": {
     "typescript": "^2.0.3",
     "typings": "^1.4.0"
   },
