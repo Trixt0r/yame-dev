@@ -11,5 +11,7 @@
   "dependencies": {
     "chokidar": "^1.6.1"
   },
-  "install": "npm install typescript -g && tsc"
+  "scripts": {
+    "postinstall": "npm install typescript typings -g && typings install && tsc"
+  }
 }
