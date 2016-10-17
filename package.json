@@ -6,9 +6,11 @@
   "author": "Trixt0r",
   "license": "ISC",
   "dependencies": {
-    "chokidar": "^1.6.1"
+    "chokidar": "^1.6.1",
+    "typescript": "^2.0.3",
+    "typings": "^1.4.0"
   },
   "scripts": {
-    "postinstall": "npm install typescript typings -g && typings install && tsc"
+    "postinstall": "typings install && tsc"
   }
 }
