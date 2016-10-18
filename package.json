@@ -13,6 +13,6 @@
     "typings": "^1.4.0"
   },
   "scripts": {
-    "postinstall": "./node_modules/.bin/typings install && ./node_modules/.bin/tsc"
+    "postinstall": "node ./node_modules/typings/dist/bin.js install && node ./node_modules/typescript/lib/tsc.js"
   }
 }
