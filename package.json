@@ -2,17 +2,23 @@
   "name": "yame-dev",
   "version": "0.0.1",
   "description": "Development module for yame.",
-  "main": "app/main.js",
+  "main": "dist/electron/main.js",
   "author": "Trixt0r",
   "license": "ISC",
   "dependencies": {
-    "chokidar": "^1.6.1"
-  },
-  "devDependencies": {
-    "typescript": "^2.0.3",
-    "typings": "^1.4.0"
+    "electron-reload": "^1.2.5",
+    "typescript": "^3.1.1"
   },
   "scripts": {
-    "postinstall": "typings install && tsc"
+    "build": "tsc -p src/electron/tsconfig.json && tsc -p src/ng/tsconfig.json",
+    "watch": "concurrently --kill-others \"tsc -p src/electron/tsconfig.json -w\" \"tsc -p src/ng/tsconfig.json -w\""
+  },
+  "yame": {
+    "electron": "dist/electron/main.js",
+    "ng": "dist/ng/main.js"
+  },
+  "devDependencies": {
+    "@types/node": "^10.11.4",
+    "concurrently": "^4.0.1"
   }
 }
