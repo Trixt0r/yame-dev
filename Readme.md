@@ -64,7 +64,7 @@ npm run build
 
 If everything ran without errors, you should see a folder named `dist` with an ng and and electron part.
 
-You can now start the yame editor and it should reload as soon as a change happens in the app root.
+You can now start the yame editor and it should reload as soon as a change happens in the app code.
 
 ## Development
 
@@ -76,4 +76,6 @@ npm run watch
 
 This will watch the ng and electron parts and re-build as soon as a change happens.
 
-You will have to re-start the electron process of the editor, since the `electron-reload` module is not watching for changes in the plugins.
+Changes to plugins should also reload the web contents.
+Note that the browser main process will only restart as soon as a change happens
+to the main electron file, due to the behaviour of `electron-reload`.
