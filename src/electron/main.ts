@@ -1,13 +1,19 @@
-import * as path from 'path';
-import * as yame from 'yame';
+import { YamePlugin } from 'yame';
 
-class Plugin {
-  constructor() { }
-  initialize() {
-    const env = yame.Environment;
-    const ending = process.platform === 'win32' ? '.cmd' : '';
-    require('electron-reload')(env.appDir, {
-      electron: path.join(env.appDir, 'node_modules', '.bin', `electron${ending}`)
+class Plugin extends YamePlugin {
+
+  /**
+   * Initializes the electron-reload module.
+   *
+   * @return {Promise<any>}
+   */
+  initialize(): Promise<void> {
+    let paths = [this.environment.appDir];
+    this.environment.plugins.forEach(plugin => paths = paths.concat(plugin.directories));
+    require('electron-reload')(paths, {
+      electron: process.execPath,
+      paths: paths,
+      followSymlinks: true
     });
     return Promise.resolve();
   }
