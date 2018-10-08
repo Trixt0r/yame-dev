@@ -2,6 +2,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "src",
+    "outDir": "dist",
     "declaration": false,
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,

@@ -1,13 +1,20 @@
 import { YamePlugin } from 'yame';
 
-class Plugin extends YamePlugin {
+export class Plugin extends YamePlugin {
+
+  id = 'yame-dev';
 
   /**
-   * Initializes the electron-reload module.
+   * Initializes the electron-reload module only on the electron side.
    *
+   * @param {string} type
    * @return {Promise<any>}
    */
-  initialize(): Promise<void> {
+  initialize(type: string): Promise<void> {
+    if (type === 'ng') {
+      console.info('[yame-dev] ng part is doing nothing for now...');
+      return Promise.resolve();
+    }
     let paths = [this.environment.appDir];
     this.environment.plugins.forEach(plugin => paths = paths.concat(plugin.directories));
     require('electron-reload')(paths, {
@@ -18,4 +25,3 @@ class Plugin extends YamePlugin {
     return Promise.resolve();
   }
 }
-export = new Plugin();
