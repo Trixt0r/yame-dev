@@ -1,5 +1,5 @@
 {
-  "name": "yame-dev",
+  "name": "@yame/yame-dev",
   "version": "0.0.1",
   "description": "Development module for yame.",
   "main": "dist/electron/main.js",
