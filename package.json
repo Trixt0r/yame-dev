@@ -9,7 +9,7 @@
     "electron-reload": "^1.2.5"
   },
   "scripts": {
-    "build": "git merge ng2 && npm install && tsc"
+    "build": "tsc"
   },
   "devDependencies": {
     "@types/node": "^10.11.4",

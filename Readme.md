@@ -1,5 +1,19 @@
 # yame-dev (npm)
 
-Npm branch, so when installing the plugin via npm, sources and other stuff won't be installed.
+Branch for npm, so when installing the plugin via npm, only relevant files will be installed.
 
-Update to the newest source and run `npm run build` to update the `/dist` folder and commit it.
+
+## Building
+Run the following commands for building:
+
+```sh
+git merge ng2
+npm install
+
+# On Unix
+ln -s path/to/yame/checkout node_modules/yame
+# On Windows
+
+mklink /J node_modules\yame path\to\yame\checkout
+npm run build
+```
