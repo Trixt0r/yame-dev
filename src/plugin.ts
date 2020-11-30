@@ -11,6 +11,7 @@ export class Plugin extends YamePlugin {
    * @return {Promise<any>}
    */
   initialize(type: string): Promise<void> {
+    if (this.environment.config.devMode !== true) return Promise.resolve();
     if (type === 'ng') {
       console.info('[yame-dev] ng part is doing nothing for now...');
       return Promise.resolve();
