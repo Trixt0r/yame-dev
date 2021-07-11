@@ -1,11 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Plugin = void 0;
 const yame_1 = require("yame");
 class Plugin extends yame_1.YamePlugin {
-    constructor() {
-        super(...arguments);
-        this.id = 'yame-dev';
-    }
+    id = 'yame-dev';
     /**
      * Initializes the electron-reload module only on the electron side.
      *
@@ -13,6 +11,8 @@ class Plugin extends yame_1.YamePlugin {
      * @return {Promise<any>}
      */
     initialize(type) {
+        if (this.environment.config.devMode !== true)
+            return Promise.resolve();
         if (type === 'ng') {
             console.info('[yame-dev] ng part is doing nothing for now...');
             return Promise.resolve();
